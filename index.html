@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Brother Hai's Pho Restaurant - Phở Ngon Nhất Sài Gòn</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Brother Hai's Pho Logo" class="logo-img"/>
+                    <span>Brother Hai's</span> Pho
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="active">Trang chủ</a>
+                <a href="about.html">Về chúng tôi</a>
+                <a href="menu.html">Thực đơn</a>
+                <a href="reservation.html" class="btn-reserve">Đặt bàn</a>
+            </nav>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Chào mừng đến với <span>Brother Hai's Pho</span></h1>
+            <p>Nơi hương vị phở truyền thống được nâng tầm bởi tình yêu & bí kíp gia truyền 30 năm</p>
+            <a href="reservation.html" class="btn-primary">Đặt bàn ngay hôm nay</a>
+        
+        
+    </section>
+
+    <!-- Menu Highlight -->
+    <section class="menu-highlight">
+        <div class="container">
+            <h2 class="section-title">Món Phở <span>Nổi Bật</span></h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://cdn-images.vtv.vn/2022/10/28/pho-viet-1666919655780218885858.jpg" alt="Phở Tái"/>
+                    <div class="card-content">
+                        <h3>Phở Tái</h3>
+                        <p>Thịt bò tái mềm ngọt, nước dùng trong veo, thơm lừng hành lá & húng quế</p>
+                        <span class="price">25.000đ</span>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <img src="https://storage.googleapis.com/onelife-public/blog.onelife.vn/2021/10/cach-lam-pho-bo-vien-cho-bua-sang-mon-chinh-453247497623.jpg" alt="Phở Bò Viên"/>
+                    <div class="card-content">
+                        <h3>Phở Bò Viên</h3>
+                        <p>Bò viên dai giòn tự làm, nước dùng đậm đà</p>
+                        <span class="price">25.000đ</span>
+                    </div>
+                </div>
+
+                <div class="menu-card special">
+                    <div class="badge">BEST SELLER</div>
+                    <img src="https://lh3.googleusercontent.com/proxy/np5_xTKXEZ6vJ5kGTDj0z8oB0NFAiu3BpiipnB8mpwcDF-8lDGH-3m_sAK2qCUt_njpCWbiG1ssdUSHTLMzvexOcLkRjbTuv" alt="Phở Phi Công"/>
+                    <div class="card-content">
+                        <h3>Phở Thập Cẩm <span class="fire">🔥</span></h3>
+                        <p>Topping tái, nạm, gầu, gân, sách, bò viên.</p>
+                        <span class="price">70.000đ</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="menu.html" class="btn-secondary">Xem thực đơn đầy đủ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Brother Hai's Pho Restaurant</h3>
+                    <p>69 Đường Phở, Quận 1, TP.HCM</p>
+                    <p>Hotline: <a href="tel:0909119229">0909 119 229</a></p>
+                </div>
+                <div>
+                    <h4>Giờ mở cửa</h4>
+                    <p>Tất cả các ngày trong tuần</p>
+                    <p>6:00 AM - 10:00 PM</p>
+                </div>
+                <div>
+                    <h4>Theo dõi anh Hai</h4>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright">© 2025 Brother Hai's Pho.  <span style="color:#e91e63">Makie-Grok</span> ❤️</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', () => {
+            document.querySelector('.nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

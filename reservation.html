@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Đặt Bàn - Brother Hai's Pho Restaurant</title>
+    <link rel="stylesheet" href="css/reservation.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Brother Hai's Pho" class="logo-img"/>
+                    <span>Brother Hai's</span> Pho
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Trang chủ</a>
+                <a href="about.html">Về chúng tôi</a>
+                <a href="menu.html">Thực đơn</a>
+                
+            </nav>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Reservation Section -->
+    <section class="reservation">
+        <div class="container">
+            <h1 class="page-title">Xác Nhận Đặt Bàn Ngay Hôm Nay </h1>
+            <p class="subtitle">Chỉ còn 1 bước nữa là anh có tô phở trong mơ rồi!</p>
+
+            <div class="reservation-content">
+                <!-- Cột trái: Form đặt bàn -->
+                <div class="form-section">
+                    <div class="form-card">
+                        <h3><i class="fas fa-calendar-check"></i> Thông tin đặt bàn</h3>
+                        <form id="reservationForm" 
+                        action="https://getform.io/f/bkkpqmyb"
+                        method="POST">
+                            <div class="form-group">
+                                <label>Họ & tên *</label>
+                                <input type="text" name="name" required placeholder="Nguyễn Văn A"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Số điện thoại *</label>
+                                <input type="tel" name="phone" required placeholder="0909119229"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Ngày đặt bàn *</label>
+                                <input type="date" name="date" required/>
+                            </div>
+                            <div class="form-group">
+                                <label>Giờ đến *</label>
+                                <input type="time" name="time" required min="06:00" max="21:00"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Số lượng khách *</label>
+                                <select name="people" required>
+                                    <option value="1">1 người - tự kỉ đẳng cấp</option>
+                                    <option value="2" selected>2 người - cặp đôi</option>
+                                    <option value="3">3 người - tiệc</option>
+                                    <option value="4">4 người - tiệc</option>
+                                    <option value="5">5 người - tiệc</option>
+                                    <option value="6+">6+ người - mega tiệc</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Ghi chú thêm (không bắt buộc)</label>
+                                <textarea name="note" rows="3" placeholder="VD: Ghế gần cửa sổ, không hành lá..."></textarea>
+                            </div>
+
+                            <!-- Hidden fields -->
+                            <input type="hidden" name="order_items" id="orderItemsInput"/>
+                            <input type="hidden" name="original_price" id="originalPriceInput"/>
+                            <input type="hidden" name="final_price" id="finalPriceInput"/>
+
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-check-circle"></i> XÁC NHẬN ĐẶT BÀN NGAY
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Cột phải: Hóa đơn -->
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h3><i class="fas fa-receipt"></i> ĐƠN PHỞ CỦA ANH</h3>
+                        <div class="order-details" id="orderDetails">
+                            <p class="empty">Đang tải đơn hàng...</p>
+                        </div>
+                        <div class="price-breakdown">
+                            <div class="line">
+                                <span>Giá gốc:</span>
+                                <span id="originalPrice">0đ</span>
+                            </div>
+                            <div class="line discount">
+                                <span>Giảm 5% đặt online:</span>
+                                <span id="discountAmount">-0đ</span>
+                            </div>
+                            <div class="line total">
+                                <strong>Tổng thanh toán:</strong>
+                                <strong id="finalPrice">0đ</strong>
+                            </div>
+                        </div>
+                        <div class="note">
+                            <i class="fas fa-gift"></i> Quà tặng: 1 ly trà đá miễn phí khi đến đúng giờ!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Brother Hai's Pho • Made with <span style="color:#e91e63">Makie-GrokAi</span> ❤️</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lấy đơn hàng từ localStorage
+        const savedOrder = JSON.parse(localStorage.getItem('currentOrder') || '{}');
+        const orderDetails = document.getElementById('orderDetails');
+        const originalPriceEl = document.getElementById('originalPrice');
+        const discountAmountEl = document.getElementById('discountAmount');
+        const finalPriceEl = document.getElementById('finalPrice');
+
+        // Hiển thị đơn hàng
+        if (savedOrder.items && savedOrder.items.length > 0) {
+            orderDetails.innerHTML = savedOrder.items.map(item => `<div class="item">• ${item}</div>`).join('');
+            
+            const finalPrice = parseInt(savedOrder.total.replace(/\D/g,''));
+            const originalPrice = Math.round(finalPrice / 0.95);
+            const discount = originalPrice - finalPrice;
+
+            originalPriceEl.textContent = originalPrice.toLocaleString() + 'đ';
+            discountAmountEl.textContent = '-' + discount.toLocaleString() + 'đ';
+            finalPriceEl.textContent = finalPrice.toLocaleString() + 'đ';
+
+            // Đưa vào form ẩn
+            document.getElementById('orderItemsInput').value = savedOrder.items.join(' | ');
+            document.getElementById('originalPriceInput').value = originalPrice.toLocaleString() + 'đ';
+            document.getElementById('finalPriceInput').value = finalPrice.toLocaleString() + 'đ';
+        } else {
+            orderDetails.innerHTML = '<p class="empty">Chưa có đơn hàng nào! <a href="menu.html">Xây tô phở ngay →</a></p>';
+        }
+
+        // Mobile menu
+        document.querySelector('.mobile-toggle').addEventListener('click', () => {
+            document.querySelector('.nav').classList.toggle('active');
+        });
+
+        // Set ngày hôm nay làm min
+        document.querySelector('input[type="date"]').min = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Thực Đơn - Brother Hai's Pho Restaurant</title>
+    <link rel="stylesheet" href="css/menu.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Brother Hai's Pho" class="logo-img"/>
+                    <span>Brother Hai's</span> Pho
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Trang chủ</a>
+                <a href="about.html">Về chúng tôi</a>
+                <a href="menu.html" class="active">Thực đơn</a>
+                <a href="reservation.html" class="btn-reserve">Đặt bàn</a>
+            </nav>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Builder -->
+    <section class="menu-builder">
+        <div class="container">
+            <h1 class="page-title">Xây Tô Phở Trong Mơ Của Anh <span class="fire">Fire</span></h1>
+            <p class="subtitle">Chọn topping → Tô màu đỏ đậm → Tính tiền tự động → Đặt bàn ngay!</p>
+
+            <div class="menu-content">
+                <!-- Lựa chọn -->
+                <div class="selection-panel">
+                    <!-- Kích cỡ tô -->
+                    <div class="option-group">
+                        <h3><i class="fas fa-bowl-rice"></i> Kích cỡ tô</h3>
+                        <div class="options size-options">
+                            <label class="option-item">
+                                <input type="radio" name="size" value="10000" data-name="Tô Nhỏ" checked>
+                                <span class="label-text">
+                                    <span class="name">Tô Nhỏ</span>
+                                    <span class="desc">Phù hợp cho trẻ em</span>
+                                    <span class="price-tag">10.000đ</span>
+                                </span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="size" value="15000" data-name="Tô Vừa">
+                                <span class="label-text">
+                                    <span class="name">Tô Vừa</span>
+                                    <span class="desc">Vừa ăn thưởng thức</span>
+                                    <span class="price-tag">15.000đ</span>
+                                </span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="size" value="20000" data-name="Tô Lớn">
+                                <span class="label-text">
+                                    <span class="name">Tô Lớn</span>
+                                    <span class="desc">No căng bụng</span>
+                                    <span class="price-tag">20.000đ</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Topping bò -->
+                    <div class="option-group">
+                        <h3><i class="fas fa-cow"></i> Topping (tự do chọn)</h3>
+                        <div class="options topping-options">
+                            <label class="option-item">
+                                <input type="checkbox" value="15000" data-name="Tái">
+                                <span class="label-text">Tái mềm ngọt <span class="price-tag">+15.000đ</span></span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" value="18000" data-name="Nạm">
+                                <span class="label-text">Nạm gầu giòn <span class="price-tag">+18.000đ</span></span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" value="20000" data-name="Gầu">
+                                <span class="label-text">Gầu béo ngậy <span class="price-tag">+20.000đ</span></span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" value="22000" data-name="Gân">
+                                <span class="label-text">Gân dai sựt sựt <span class="price-tag">+22.000đ</span></span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" value="25000" data-name="Sách">
+                                <span class="label-text">Sách giòn tan <span class="price-tag">+25.000đ</span></span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" value="15000" data-name="Bò viên">
+                                <span class="label-text">Bò viên nhà làm <span class="price-tag">+15.000đ</span></span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" value="10000" data-name="Trứng">
+                                <span class="label-text">Trứng lòng đào <span class="price-tag">+10.000đ</span></span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" value="5000" data-name="Rau">
+                                <span class="label-text">Rau <span class="price-tag">+5.000đ</span></span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" value="2000" data-name="Quẩy">
+                                <span class="label-text">Quẩy giòn tan <span class="price-tag">+2.000đ</span></span>
+                            </label>
+                            <label class="option-item special">
+                                <input type="checkbox" value="1000000" data-name="PHỞ 6H VIP">
+                                <span class="label-text">PHỞ 50kg 6H full service VIP <span class="price-tag">+1.000.000đ</span></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Nước dùng -->
+                    <div class="option-group">
+                        <h3><i class="fas fa-pepper-hot"></i> Nước dùng</h3>
+                        <div class="options">
+                            <label class="option-item">
+                                <input type="radio" name="broth" value="0" data-name="Công Thức Gia Truyền" checked>
+                                <span class="label-text">Công Thức Gia Truyền</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="broth" value="10000" data-name="Gà Thuốc Bắc">
+                                <span class="label-text">Nước hầm gà thuốc bắc <span class="price-tag">+10.000đ</span></span>
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="broth" value="10000" data-name="Thanh Miền Nam">
+                                <span class="label-text">Nhẹ thanh Miền Nam <span class="price-tag">+10.000đ</span></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hóa đơn -->
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h3><i class="fas fa-receipt"></i> ORDER CỦA BẠN</h3>
+                        <div class="summary-items" id="orderItems">
+                            <p class="empty">PHỞ KHÔNG TOPPING</p>
+                        </div>
+                        <div class="total">
+                            <strong>Tổng tiền:</strong>
+                            <span id="totalPrice">10.000đ</span>
+                        </div>
+                        <button class="btn-order" id="orderBtn">
+                            <i class="fas fa-utensils"></i> Đặt bàn ngay được giảm 5% – 10.000đ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Brother Hai's Pho • co-operate with <span style="color:#e91e63">Makie-GrokAi</span> ❤️</p>
+        </div>
+    </footer>
+
+    <script>
+        const orderItems = document.getElementById('orderItems');
+        const totalPrice = document.getElementById('totalPrice');
+        const orderBtn = document.getElementById('orderBtn');
+
+        function updateOrder() {
+            let total = 0;
+            let items = [];
+
+            // Kích cỡ tô
+            const size = document.querySelector('input[name="size"]:checked');
+            total += parseInt(size.value);
+            items.push(`${size.dataset.name}: ${parseInt(size.value).toLocaleString()}đ`);
+
+            // Topping
+            document.querySelectorAll('.topping-options input:checked').forEach(cb => {
+                total += parseInt(cb.value);
+                items.push(`${cb.dataset.name}: +${parseInt(cb.value).toLocaleString()}đ`);
+            });
+
+            // Nước dùng
+            const broth = document.querySelector('input[name="broth"]:checked');
+            const brothPrice = parseInt(broth.value);
+            if (brothPrice > 0) {
+                total += brothPrice;
+                items.push(`${broth.dataset.name}: +${brothPrice.toLocaleString()}đ`);
+            }
+
+            // Hiển thị
+            if (items.length > 1 || total > parseInt(size.value)) {
+                orderItems.innerHTML = items.map(item => `<div class="item">• ${item}</div>`).join('');
+            } else {
+                orderItems.innerHTML = '<p class="empty">PHỞ KHÔNG TOPPING</p>';
+            }
+
+            // Giảm 5%
+            const finalTotal = Math.round(total * 0.95);
+            totalPrice.textContent = finalTotal.toLocaleString() + 'đ';
+            orderBtn.innerHTML = `<i class="fas fa-utensils"></i> Đặt bàn ngay được giảm 5% – ${finalTotal.toLocaleString()}đ`;
+        }
+
+        document.querySelectorAll('input').forEach(input => input.addEventListener('change', updateOrder));
+        
+        orderBtn.addEventListener('click', () => {
+            const order = {
+                items: Array.from(document.querySelectorAll('#orderItems .item')).map(el => el.textContent.slice(2)),
+                total: totalPrice.textContent,
+                original: (parseInt(totalPrice.textContent.replace(/\D/g,'')) / 0.95).toLocaleString() + 'đ'
+            };
+            localStorage.setItem('currentOrder', JSON.stringify(order));
+            window.location.href = 'reservation.html';
+        });
+
+        updateOrder();
+    </script>
+
+    <script>
+        document.querySelector('.mobile-toggle').addEventListener('click', () => {
+            document.querySelector('.nav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
